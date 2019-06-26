@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Dashboard</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Foo Dashboard</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body class="d-flex flex-column">
+  <div id="page-content">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; iLude.com</small>
+    </div>
+  </footer>
+</body>
 </html>
+
+
