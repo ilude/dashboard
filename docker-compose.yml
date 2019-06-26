@@ -1,0 +1,8 @@
+version: '2.4'
+services:
+  web-blue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: production/dashboard
+    restart: unless-stopped

@@ -1,0 +1,5 @@
+docker build . -t rails-builder:6
+
+$current=$((get-item $(pwd)).parent.parent.FullName); docker run -it --rm  -v ${current}:/usr/src rails-builder:6 bash
+
+rails new dashboard --force --skip-bundle --skip-webpack-install
