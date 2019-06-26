@@ -1,8 +1,14 @@
 version: '2.4'
 services:
   web-blue:
+    command: bundle exec guard -i -p
     image: development/dashboard
     ports:
       - 3000:3000
     volumes:
       - .:/app
+      - /app/node_modules # https://stackoverflow.com/a/38426160/1973777
+    environment:
+      - RAILS_ENV=development
+      - PRIMARY_INSTANCE=true
+      - RAILS_EMAIL_OVERRIDE=mike.glenn@rammount.com
