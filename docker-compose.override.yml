@@ -1,7 +1,7 @@
 version: '2.4'
 services:
   web-blue:
-    command: bundle exec guard -i -p
+    command: bundle exec guard -i -w ./config
     image: development/dashboard
     ports:
       - 3000:3000
