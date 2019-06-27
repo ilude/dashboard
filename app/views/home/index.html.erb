@@ -1,2 +1,20 @@
-<h1>Hello, Rails 3!</h1>
+
+
+
+<div style="border: 1px solid #e9ecef; font-family: Helvetica, Verdana, Arial, sans-serif;">
+  <div class="text-left" style="background-color: #e9ecef; border-top-left-radius:5px;border-top-right-radius:5px;text-shadow:none; padding-left: 10px;">
+      <div style="">
+          <%= link_to @feed.channel.title, @feed.channel.link %>
+      </div>
+  </div>
+  <div class="text-left" style="width: 100%; padding: 10px;">
+    <% @feed.items.take(10).each do |item| %>
+      <div style="border-bottom: 1px solid #E0E0E0; padding: 5px 0px;">
+        <div style="font-weight: bold; font-size: 12px"><%= link_to item.title.truncate(100, separator: /\s/), item.link %></div>
+        <div style="font-size: 11px; color: #444;"><%= strip_tags(item.description.truncate(185, separator: /\s/)) %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <%= tag.div id: :boards, data: { lists: [] } %>

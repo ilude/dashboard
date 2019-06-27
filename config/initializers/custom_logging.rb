@@ -49,6 +49,7 @@ Rails.application.configure do
 
   sql_logger = ActiveSupport::Logger.new(STDOUT)
   sql_logger.level = Logger.const_get( ENV.fetch("RAILS_SQL_LOG_LEVEL", ENV.fetch("RAILS_LOG_LEVEL", "DEBUG")))
+  sql_logger.formatter = Logger::SimpleFormatter.new
   ActiveRecord::Base.logger = sql_logger
-  logger.info "Sql Logging Level: #{sql_logger.level}"
+  #logger.info "Sql logging enabled at level: #{ENV.fetch("RAILS_SQL_LOG_LEVEL", ENV.fetch("RAILS_LOG_LEVEL", "DEBUG"))}"
 end

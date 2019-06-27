@@ -76,7 +76,7 @@ EMPTY_TARGETS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
 $(eval $(EMPTY_TARGETS):;@:)
 
 
-up: build
+up: down build
 	docker-compose $(FLAGS) up --force-recreate --abort-on-container-exit --remove-orphans
 
 start: build 
